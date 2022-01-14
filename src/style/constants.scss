@@ -1,0 +1,63 @@
+// Переменные
+$fontFamily: Roboto;
+$mainFontSize: 16;
+$xlFontSize: 18;
+$xxlFontSize: 30;
+
+$maxWidth: 1920;
+$minWidth: 280;
+$maxWidthContainer: 77rem;
+
+//Z-Index
+$zIndexLight: 10;
+$zIndexNormal: 100;
+$zIndexHight: 1000;
+
+// Transition
+$transitionLight: 0.3s;
+$transitionNormal: 0.5s;
+$transitionHight: 0.8s;
+// Breakpoints
+$xxl: 2048;
+$xl: 1940;
+$l: 1460;
+$m: 1024;
+$s: 780;
+$xs: 520;
+$xxs: 375;
+
+// [COLORS]
+
+// [white]
+$whiteColor: #ffffff;
+// [white]
+$blackColor: #1a1b22;
+// [gray]
+
+$grayColor500: #b6bcbf;
+$grayColor400: #e6e8eb;
+$grayColor300: #f5f6f7;
+// [orange]
+$orangeColor700: #e89f71;
+// [red]
+$redColor700: #ff0000;
+// [green]
+$greenColor700: #2ec1ac;
+// [blue]
+$blueColor500: #2a65cc;
+$blueColor400: #2f71e5;
+$blueColor300: #347eff;
+
+// [BUTTONS]
+$mainButtonColor: $blueColor400;
+$hoverButtonColor: $blueColor300;
+$clickButtonColor: $blueColor500;
+$disabledButtonColor: $grayColor400;
+
+// [TEXT]
+$textColor: $blackColor;
+$lightTextColor: $grayColor500;
+
+// [BURGER]
+$burgerColor: $blackColor;
+$mainColor: $blackColor;
