@@ -1,0 +1,68 @@
+.about-us {
+  // .about-us__container
+
+  &__container {
+    @media (min-width: ($xs+px)) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  // .about-us__image-container
+
+  &__image-container {
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: rem(20);
+    @include adaptive-value("height", 464, 272, $xs);
+    @media (min-width: ($xs+px)) {
+      border-radius: 50%;
+      @include adaptive-value("width", 464, 272, $xs);
+    }
+    @media (max-width: ($xs+px)) {
+      margin-bottom: rem(24);
+    }
+    position: relative;
+  }
+
+  // .about-us__image
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  // .about-us__content
+
+  &__content {
+    max-width: rem(600);
+    @media (min-width: ($xs+px)) {
+      @include adaptive-value("margin-left", 56, 32, $s);
+    }
+  }
+
+  // .about-us__title
+
+  &__title {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    @include adaptive-value("font-size", 40, 30, $xxs);
+    @include adaptive-value("line-height", 46, 40, $xxs);
+    @include adaptive-value("margin-bottom", 24, 16, $xxs);
+  }
+
+  // .about-us__text
+
+  &__text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: rem(18);
+    line-height: rem(24);
+    @include adaptive-value("margin-top", 20, 16, $xxs);
+  }
+}

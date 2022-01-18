@@ -1,7 +1,13 @@
-/* eslint-disable no-underscore-dangle */
 export default class Scroll {
   constructor({
-    element, activationRangeTop, activationRangeBottom, playOnce, top, bottom,
+    element,
+    activationRangeTop,
+    activationRangeBottom,
+    playOnce,
+    updateFrequency,
+    activeClass,
+    top,
+    bottom,
   }) {
     this.element = element;
     this.top = activationRangeTop ? top || 0 : null;
@@ -9,18 +15,18 @@ export default class Scroll {
     this.activationRangeTop = activationRangeTop || false;
     this.activationRangeBottom = activationRangeBottom || false;
     this.playOnce = playOnce || false;
-    // Внутренние константы
+    this.updateFrequency = updateFrequency || 20;
+    this.activeClass = activeClass || "_scroll";
+    // Внутренние переменные
     this.entries = null;
     this.observer = null;
-    this.updateFrequency = null;
     this.observe();
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  _thresholdArray(steps) {
-    return Array(steps + 1)
+  _thresholdArray() {
+    return Array(this.updateFrequency + 1)
       .fill(0)
-      .map((item, index) => index / steps || 0);
+      .map((item, index) => index / this.updateFrequency || 0);
   }
 
   _handleIntersect(entries) {
@@ -33,7 +39,7 @@ export default class Scroll {
 
   observe() {
     this.observer = new IntersectionObserver(this._handleIntersect.bind(this), {
-      threshold: this._thresholdArray(20),
+      threshold: this._thresholdArray(),
     });
     this.observer.observe(this.element);
   }
@@ -47,11 +53,11 @@ export default class Scroll {
   }
 
   addClass() {
-    this.element.classList.remove("_scroll");
+    this.element.classList.remove(this.activeClass);
   }
 
   removeClass() {
-    this.element.classList.add("_scroll");
+    this.element.classList.add(this.activeClass);
   }
 
   scrollHandler() {

@@ -11,7 +11,7 @@ export const js = () => app.gulp.src(app.path.src.js, { sourcemap: app.isDev })
     mode: app.isBuild ? "production" : "development",
     output: {
       filename: "app.build.js"
-    }
+    },
   }))
   .pipe(app.gulp.dest(app.path.build.js))
   .pipe(app.plugins.browserSync.stream());

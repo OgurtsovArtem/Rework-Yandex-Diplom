@@ -96,6 +96,34 @@
 //   color: $accentColor;
 // }
 // ..........................ANIMATION..............................
+._blink {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    height: 100%;
+    width: 200%;
+    transform: rotate(-45deg);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.4)
+    );
+    animation: blinkAnimation 1.5s infinite linear;
+  }
+}
+
+@keyframes blinkAnimation {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
 
 // ............................BURGER................................
 ._burger {
