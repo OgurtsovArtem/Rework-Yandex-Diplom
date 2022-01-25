@@ -1,0 +1,64 @@
+.footer {
+  // .footer__container
+  @include adaptive-value("padding-top", 80, 30, $xxs);
+  padding-bottom: rem(25);
+  &__container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    @media (max-width: ($xs+px)) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  // .footer__copyright
+
+  &__copyright {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: rem(16);
+    line-height: rem(22);
+    color: $grayColor500;
+    @media (max-width: ($xs+px)) {
+      margin-top: rem(30);
+    }
+  }
+
+  // .footer__nav
+
+  &__nav {
+  }
+
+  // .footer__list
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  // .footer__item
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: rem(24);
+    }
+  }
+
+  // .footer__link
+
+  &__link {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: rem(18);
+    line-height: rem(24);
+  }
+
+  // .footer__social-icon
+
+  &__social-icon {
+    width: rem(20);
+    height: rem(20);
+  }
+}

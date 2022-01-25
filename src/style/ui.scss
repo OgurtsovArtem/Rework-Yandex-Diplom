@@ -1,0 +1,189 @@
+@import "./constants.scss";
+
+// ..........................BUTTONS..............................
+._button {
+  border-radius: rem(100);
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: rem(18);
+  line-height: rem(24);
+  transition: 0.3s;
+  @include adaptive-value("padding", 20, 16, 0);
+}
+._button:disabled,
+._button[disabled] {
+  background-color: $disabledButtonColor;
+  color: $grayColor500;
+  cursor: default;
+  border: none;
+}
+._button:disabled:hover,
+._button[disabled]:hover {
+  background-color: $disabledButtonColor;
+  color: $grayColor500;
+  box-shadow: none;
+  opacity: 1;
+}
+._button_white {
+  background-color: $whiteColor;
+  color: $blackColor;
+  &:hover {
+    opacity: 0.9;
+  }
+  &:active {
+    opacity: 0.8;
+  }
+}
+._button_blue {
+  background-color: $mainButtonColor;
+  color: $whiteColor;
+  &:hover {
+    background-color: $hoverButtonColor;
+  }
+  &:active {
+    background-color: $clickButtonColor;
+  }
+}
+._button-block {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: rem(24);
+  border-radius: rem(10);
+  padding: rem(8);
+  max-width: rem(40);
+  max-height: rem(40);
+  background-color: $whiteColor;
+  color: $blackColor;
+}
+._button-block_rectangular {
+  max-width: none;
+  max-height: none;
+  padding: rem(8) rem(12);
+}
+// ......................SWIPER COMPONENTS..........................
+
+// ......................TECHNICAL CLASSES..........................
+._container {
+  max-width: $maxWidthContainer;
+  width: 100%;
+  padding: 0px 1rem;
+  margin: 0 auto;
+}
+._flex {
+  display: flex;
+}
+._hover {
+  @media (any-hover: hover) {
+    &:hover {
+      // box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
+      transform: translateY(rem(-4));
+      box-shadow: 0 rem(4) rem(6) rem(-7) rgb(0 0 0 / 10%), 0 rem(4) rem(30) rem(-9) rgb(0 0 0 / 20%);
+    }
+  }
+}
+._fixed {
+  overflow: hidden;
+}
+._section {
+  @include adaptive-value("padding-top", 80, 30, 0);
+  @include adaptive-value("padding-bottom", 80, 30, 0);
+}
+// ._accent {
+//   color: $accentColor;
+// }
+// ..........................ANIMATION..............................
+._blink {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    height: 100%;
+    width: 200%;
+    transform: rotate(-45deg);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+    animation: blinkAnimation 1.5s infinite linear;
+  }
+}
+
+@keyframes blinkAnimation {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+._shake {
+  animation: shake 0.82s both;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: rotate(-2deg);
+  }
+
+  20%,
+  80% {
+    transform: rotate(2deg);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: rotate(-4deg);
+  }
+
+  40%,
+  60% {
+    transform: rotate(4deg);
+  }
+}
+// ............................BURGER................................
+._burger {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+._burger span {
+  display: block;
+  position: absolute;
+  height: rem(2);
+  width: 100%;
+  background-color: $burgerColor;
+  border-radius: 3rem;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+._burger span:nth-child(1) {
+  top: 0px;
+}
+._burger span:nth-child(2) {
+  top: 100%;
+  transform: translateY(-100%);
+}
+// Active_burger
+._burger._active span:nth-child(1) {
+  transform: rotate(-45deg);
+  top: 50%;
+}
+._burger._active span:nth-child(2) {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+// ...........................POPUP................................

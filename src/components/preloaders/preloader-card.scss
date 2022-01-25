@@ -1,0 +1,61 @@
+.preloader-card {
+  --column-size: 4;
+  grid-column-start: span var(--column-size);
+  transition: $transitionNormal;
+  background-color: $whiteColor;
+  border-radius: rem(16);
+  overflow: hidden;
+
+  // .preloader-card__continaer
+  &__continaer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include adaptive-value("padding", 24, 16, $xxs);
+    & div {
+      border-radius: rem(10);
+    }
+  }
+
+  // .preloader-card__image
+
+  &__image {
+    @include adaptive-value("height", 272, 244, 0);
+    background-color: $grayColor400;
+  }
+
+  // .preloader-card__date
+
+  &__date {
+    width: 45%;
+    height: rem(20);
+    background-color: $grayColor400;
+  }
+
+  // .preloader-card__title
+
+  &__title {
+    width: 100%;
+    height: rem(20);
+    background-color: $grayColor400;
+    @include adaptive-value("margin-top", 12, 10, $xxs);
+  }
+
+  // .preloader-card__text
+
+  &__text {
+    width: 100%;
+    height: rem(88);
+    background-color: $grayColor400;
+    @include adaptive-value("margin-top", 16, 10, $xxs);
+  }
+
+  // .preloader-card__link
+
+  &__link {
+    width: 30%;
+    height: rem(20);
+    background-color: $grayColor400;
+    @include adaptive-value("margin-top", 16, 8, $xxs);
+  }
+}

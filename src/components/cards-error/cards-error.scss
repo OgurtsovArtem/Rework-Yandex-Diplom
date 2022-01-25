@@ -1,0 +1,49 @@
+.cards-error {
+  // .cards-error__container
+  background-color: $grayColor300;
+  display: none;
+  &._active {
+    display: block;
+  }
+  &__container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    max-width: rem(356);
+    padding: rem(6);
+  }
+
+  // .cards-error__image-container
+
+  &__image-container {
+    max-width: rem(96);
+    margin: 0 auto;
+  }
+
+  // .cards-error__image
+
+  &__image {
+  }
+
+  // .cards-error__title
+
+  &__title {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: rem(26);
+    line-height: rem(30);
+    margin-top: rem(24);
+  }
+
+  // .cards-error__text
+
+  &__text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: rem(18);
+    line-height: rem(24);
+    margin-top: rem(16);
+  }
+}

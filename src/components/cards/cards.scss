@@ -1,0 +1,56 @@
+.cards {
+  background-color: $grayColor300;
+  display: none;
+  &._active {
+    display: block;
+  }
+  // .cards__title
+  &__title {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    @include adaptive-value("font-size", 40, 30, 0);
+    @include adaptive-value("line-height", 46, 34, 0);
+    @include adaptive-value("margin-bottom", 64, 24, $xxs);
+  }
+
+  // .cards__container
+
+  &__container {
+  }
+
+  // .cards__list
+
+  &__list {
+    display: grid;
+    --columns-count: 12;
+    grid-template-columns: repeat(var(--columns-count), minmax(0, 1fr));
+    @include adaptive-value("gap", 16, 8, $s);
+    @media (max-width: ($s+px)) {
+      --columns-count: 8;
+    }
+    @media (max-width: ($xs+px)) {
+      --columns-count: 4;
+    }
+  }
+
+  // .cards__card
+
+  &__card {
+    --column-size: 4;
+    grid-column-start: span var(--column-size);
+    transition: $transitionNormal;
+  }
+
+  // .cards__button
+
+  &__button {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    @include adaptive-value("margin-top", 64, 16, $xxs);
+    @media (min-width: ($xs+px)) {
+      max-width: rem(288);
+    }
+  }
+}
