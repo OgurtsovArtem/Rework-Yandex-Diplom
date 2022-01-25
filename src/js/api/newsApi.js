@@ -32,7 +32,7 @@ export default class NewsApi {
         return Promise.reject();
       })
       .catch((err) => {
-        console.log(err);
+        throw new Error(err);
       });
   }
 }
